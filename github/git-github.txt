@@ -1,0 +1,178 @@
+## GIT AND GITHUB COMMANDS ##
+
+- init a repo
+- tracked/untracked files
+- staged/untages changes
+- commit
+- branches
+- merging
+- merge conflicts
+- remote repos
+- cloning repos
+
+----------------------------------------
+
+// local repo: on your machine
+// remote repo: hosted on a server
+
+----------------------------------------
+
+*** INIT A REPO (inside the folder you want to init repo for), the directory
+    can have files already in it ***
+
+> git init
+
+// .git folder: indicates that everything inside this directory is a part
+    of the repo (it is a hidden folder)
+
+----------------------------------------
+
+// untracked file: any changes in this file is not currently being tracked
+    by git because we have not yet added this file to the staging area
+
+// tracked file: git keeps track of any changes made, if they have been 
+    staged, modified etc
+
+// a tracked file needs to be added to the staging area (staged file) to
+    be commited
+
+*** SEE ANY UNTRACKED FILES ***
+
+> git status
+
+// in git there are 3 areas: the local area, the staging area and a commit
+    or the actual repo
+// local: on our local machine
+// staging: temporary area where you decide what files you want to be part
+    of the commit
+// commit: bundle of changes, a checkpoint you can go back to
+
+*** ADD FILES TO STAGING AREA ***
+
+> git add . // add all files
+> git add full_name_of_file // include extension
+
+// once you add a file, the file is now being tracked by git
+
+*** REMOVE FILE FROM STAGING AREA ***
+
+> git rm --cached full_name_of_file // include extension
+
+// the file becomes untracked after it is removed
+
+*** MAKE A COMMIT ***
+
+> git commit -m "write message here" // msg should be in present tense
+                                        and should be short
+
+// by default any of the files associated by the last commit become tracked
+    even if not manually added to the staging area
+
+*** ADD ALL FILES AND COMMIT IN ONE LINE ***
+
+> git commit -am "message"
+
+----------------------------------------
+
+// branch: variation of the codebase
+// master/main branch: main repo, production repo
+// other branches: e.g. feature branches, where unfinished work resides
+// you can branch off from a branch (e.g. from the master branch)
+// when branching off the master branch for example, a new branch is created
+    with a copy of the master branch, and in this branch you can make commits
+    without affecting the master branch
+
+*** CREATE AND GO TO NEW BRANCH ***
+
+> git checkout -b new_branch_name // -b means create new branch.
+
+// when checking out to a branch, you will only see the last commit of that
+    branch, e.g. if you branch off the master branch and add files to the
+    new branch, you will only see the added files in the new branch but not
+    in the master branch
+
+// "1" commit ahead: this means that the new branch has 1 more commit than
+    the master branch
+
+*** VIEW BRANCHES ***
+
+> git branch 
+
+// asterisk tells you the current branch
+
+// once you have made the changes needed in a branch you can put the changes
+    into the parent branch (in this case the master) by merging/combing
+    the parent branch and this branch
+
+*** CREATE A BRANCH FROM ANOTHER BRANCH (NOT MASTER) ***
+
+> git checkout master // go to master
+> git checkout -b new_branch master // branch from master called new_branch
+> git checkout new_branch // got to new_branch
+> git checkout -b branch1 new_branch // branch from new_branch called branch1
+
+// after committing to branch1, merge branch1 and new_branch then merge
+    new_branch and master
+
+*** MERGE BRANCHES ***
+
+// bring changes made in new_branch to master
+> git checkout master // go to master
+> git merge new_branch // new_branch changes added to master branch
+
+// once the branches are merged new_branch is deleted
+
+*** MERGE CONFLICTS ***
+
+// happens when you try to merge two branches that have conflicting changes
+// you need to fix the conflicts then commit the results
+// to fix modify the file (in the parent/master branch), e.g. keep changes
+    in master branch or keep changes in new_branch or keep both changes
+// after choosing what version you want to keep by modifying the file,
+    save the file then continue this merge by doing a merge commit
+    (add fixed files from master branch to staging area then commit)
+
+*** RENAME BRANCH ***
+
+> git branch -M main // renames current branch (master) to main
+
+// github has renamed master to main
+
+----------------------------------------
+
+*** ADD A REMOTE REPOSITORY (GitHub) ***
+
+> git remote add origin https://github.com/nicole-cab/web-dev.git
+// add a location for a remote repo (add a name to a remote repo in this
+    case origin is linked to https://github.com/nicole-cab/web-dev.git)
+// you can have multiple, e.g. if you want to push to multiple github repos
+// origin: the name of that location (you can rename it to anything but
+    origin is the standard)
+
+*** VIEW REMOTES ***
+
+> git remote
+
+*** PUSH TO REMOTE REPO ***
+
+> git push -u origin main // push changes from main to the remote repo
+// -u used to remember where to push to and what branch to push from
+// you can checkout to new_branch and push this branch to the remote repo
+
+*** PULL CHANGHES FROM REMOTE REPO ***
+
+// if the remote repo has changes ahead of your local repo you can pull
+    these changes so that your local repo is up-to-date
+
+> git pull
+
+----------------------------------------
+
+*** CLONE A REMOTE REPO TO YOUR LOCAL REPO ***
+
+// go to directory you want to clone the repo on
+// when cloning a repo, by default there is a remote setup called origin
+
+> git clone https://github.com/nicole-cab/web-dev.git
+
+
