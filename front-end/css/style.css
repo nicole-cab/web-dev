@@ -1,0 +1,85 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap");
+
+/* a ruleset includes the selector, the brackets and the properties */
+/* selectors are patters used to select the element(s) you want to style https://www.w3schools.com/cssref/css_selectors.php */
+/* a declaration: "property: property value" */
+
+/* selects all img elements */
+img {
+    width: 100%;
+    border-radius: 12px;
+    height: 214px;
+    object-fit: cover; /* this property sets how the content of a replaced element, such as an <img> or <video>, should be resized to fit its container. */
+}
+
+body {
+    background-color: #eaeff1;
+    /* for the font to work you need to import it */
+    font-family: "Raleway", sans-serif;
+
+}
+
+/* selects the element with the id container */
+#container {
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 20vh;
+    /* margin: topValue rightValue bottomValue leftValue;
+        margin: verticalValue horizontalValue; */
+}
+
+/* selects the elements with the class card */
+.card {
+    background-color: white;
+    border: 1px solid #bacdd8;
+    /* border: widthValue styleValue colorValue; */
+    padding: 8px;
+    /* padding: topValue rightValue bottomValue leftValue;
+        padding: verticalValue horizontalValue; */
+    border-radius: 12px;
+}
+
+.tag {
+    padding: 4px 8px;
+    border: 1px solid #e5eaed;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #788697;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 16px;
+}
+
+p {
+    font-size: 14px;
+    color: #7f8c9b;
+    line-height: 150%;
+}
+
+button {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #0077ff;
+    background-color: #e0efff;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer; /* it is a clickable element therefore it should have a pointer cursor */
+}
+
+/* focus:  triggered when the user clicks or taps on an element or selects it with the keyboard's Tab key */
+/* styles the button when on focus or on hover */
+button:focus, button:hover {
+    background-color: #0077ff;
+    color: #e0efff;
+}
+
+.card_details {
+    padding: 16px 8px 8px 8px;
+}

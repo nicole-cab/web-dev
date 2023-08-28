@@ -1,0 +1,40 @@
+## CSS NOTES ##
+
+- Basic Selectors
+- Pseudo-classes and how to combine
+- Box Model
+- Flexbox
+- Grid
+- Positioning (relative, absolute)
+- Units (px, em, rem, vh…)
+
+----------------------------------------
+
+*** BOX MODEL ***
+
+*** SELECTORS ***
+*** THE CASCADE ***
+*** SPECIFICITY ***
+*** INHERITANCE ***
+*** COLOR ***
+*** SIZING UNITS ***
+*** LAYOUT ***
+*** FLEXBOX ***
+*** GRID ***
+*** LOGICAL PROPERTIES ***
+*** SPACING ***
+*** PSEUDO-CLASSES ***
+*** BORDERS ***
+*** SHADOWS ***
+*** FOCUS ***
+*** Z-INDEX AND STACKING CONTEXTS ***
+*** FUNCTIONS ***
+*** GRADIENTS ***
+*** ANIMATIONS ***
+*** FILTERS ***
+*** BLEND MODELS ***
+*** LISTS ***
+*** TRANSITIONS ***
+*** OVERFLOW ***
+*** BACKGROUNDS ***
+*** TEXT AND TYPOGRAPHY ***
