@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- the link element specifies relationships between the current document and an external resource -->
-    <link src="css.css" rel="stylesheet" />
+    <link src="stylesheet.css" type="text/css" rel="stylesheet" />
     <!-- title is optional -->
     <title>This is the Title of the website</title>
   </head>
@@ -40,13 +40,17 @@
       <a href="https://google.com">This links to the google homepage</a>
     </div>
     <div>
+      <!-- tables are compound elements -->
       <table>
+        <!-- tr: table row -->
         <tr>
+          <!-- th: table header cell -->
           <th>Firstname</th>
           <th>Lastname</th>
           <th>Favorite Animal</th>
         </tr>
         <tr>
+          <!-- td: table cell -->
           <td>Beau</td>
           <td>Carnes</td>
           <td>cow</td>
@@ -57,6 +61,12 @@
           <td>dog</td>
         </tr>
       </table>
+      <hr />
+      <img src="meme.png" width="500px" />
+      <hr />
+      <!-- attributes without values are called Boolean attributes -->
+      <button onclick="alert('Submit')" disabled>Button disabled</button>
+      <button onclick="alert('Submit')">Button enabled</button>
     </div>
   </body>
 </html>

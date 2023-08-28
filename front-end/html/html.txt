@@ -1,0 +1,100 @@
+## HTML NOTES ##
+
+// there are in total more than 100 elements. But 90% of the time you will only use
+    around 20 of the most common
+
+*** SECTION ELEMENTS *** (organize content into different sections)
+
+<div></div>
+<span></span> section inline content
+<header></header>
+<footer></footer>
+<nav></nav>
+<main></main>
+<section></section>
+
+
+*** TEXT CONTENT *** (to organize text content or blocks, important for accessibility and SEO)
+
+<h1></h1> to <h6></h6> headers
+<p></p> paragraph
+<div></div> section
+<span></span> inline section
+<ul></ul> unordered list
+<ol></ol> ordered list
+<li></li> list item
+
+
+*** FORMS ***
+
+<form></form>
+<input> input box
+<button></button>
+<label></label>
+<textarea></textarea> larger input box
+
+*** IMAGES AND LINKS ***
+
+<img> images
+<a></a> anchor tag for hyperlinks
+
+*** OTHERS ***
+
+<br> break
+<hr> horizontal rule
+
+
+----------------------------------------
+
+# BLOCK-LEVEL vs INLINE HTML ELEMENTS 
+
+// block-level elements: always start on a new line and take up the full width available
+    e.g. div
+// inline-level elements: do not start on a new line and it only takes up as much width
+    as necessary e.g. span
+
+*** INLINE-ELEMENTS *** (the rest are block-level - from the tags listed above)
+
+<span></span>
+<input>
+<button></button>
+<label></label>
+<textarea></textarea>
+<img>
+<a></a>
+<br>
+
+----------------------------------------
+
+# HTML ENTITIES
+
+// some characters are reserved in HTML, character entities are used to display reserved
+    characters in HTML, it looks like this:
+    
+    &entity_name;
+    OR
+    &#entity_number;
+
+// checkout some useful HTML entities here: https://www.w3schools.com/html/html_entities.asp
+
+----------------------------------------
+
+# BASIC HTML TAGS
+
+<!DOCTYPE html> for html to work let the browser know it should expect HTML
+
+<html lang="en"></html> wraps all the content on the page, known as the root element
+                        we should always include the lang attribute to declare the language
+                        of the page
+
+<head></head> container for everything you want to include, but not content that you see
+
+<meta charset="UTF-8" /> the first meta element is used to set the character set to be UTF-8
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /> the second meta
+                        element specifies the browser viewport, this setting is for a
+                        mobile-optimized site
+
+<title>Document</title> sets the title of the page
+
+<body></body> contains all the content on the page you see
