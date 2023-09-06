@@ -22,3 +22,17 @@ p.overflow {
     overflow: auto; /* auto - scroll */
 }
 
+body {
+    background-color:beige
+}
+
+/* properties such as outline and box-shadow occupy the margin area or could even overlap, 
+this properties don't affect the size of the box */
+p.margin {
+    background-color: aqua;
+    outline: green solid 100px;
+    box-sizing: border-box;
+    border: 10px solid red;
+    padding: 10px;
+    margin: 100px;
+}
