@@ -1,0 +1,77 @@
+p.extrinsic-sizing {
+    width: 100px;
+    height: 50px;
+    padding: 20px;
+    border: 1px solid;
+}
+
+p.intrinsic-sizing {
+    /* be only as wide as the min width of its content */
+    width: min-content;
+    height: min-content;
+    padding: 20px;
+    border: 1px solid;
+}
+
+p.overflow {
+    width: 100px;
+    height: 50px;
+    padding: 20px;
+    border: 1px solid;
+    /* overflow sets the behaviour of content overflowing from its container */
+    overflow: auto; /* auto - scroll */
+}
+
+body {
+    background-color:beige
+}
+
+/* properties such as outline and box-shadow occupy the margin area or could even overlap,
+this properties don't affect the size of the box */
+p.margin {
+    background-color: aqua;
+    outline: green solid 50px;
+    box-sizing: border-box;
+    border: 10px solid red;
+    padding: 10px;
+    margin: 100px;
+}
+
+/* an inline element has a block margin, but other elements
+won't respect it, use inline-block and those elements will respect
+the block margin while maintain most inline behaviours */
+/* some display property values:
+    > block: takes up whole width, starts on a new line
+    > inline: elemnts as an inline element, width and height don't work
+    > inline-block: mix of block and inline, e.g. can set up w and h but inline
+    > list-item element behaves like li element */
+/* inline and inline-block as large as contents */
+p.inline {
+    border: solid black 1px;
+    display: inline-block;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+/* box-sizing works out how to calculate its box size */
+/* default actual width of an element = width+padding+border
+    same with height (box-sizing: content-box is the default)*/
+/* box-sizing: border-box
+    allows you to make the actual width of an element fixed, then
+    when adding padding and border the context box shrinks,
+    this makes the w of an element more predictable*/
+p.my-box {
+    border: solid black 100px;
+    /* context box means that when you set the w and h, any padding or border will add to the w and h */
+    /* border-box means that any padding and border will be included in the w and h, and that the content box will shrink to absorb that extra width */
+    box-sizing: content-box;
+    width: 500px;
+    height: 100px;
+}
+p.my-box-2 {
+    border: solid black 30px;
+    box-sizing: border-box; /* the content box shrinks as you add more padding and border */
+    width: 500px;
+    height: 100px;
+}
