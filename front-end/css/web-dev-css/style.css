@@ -1,0 +1,24 @@
+p.extrinsic-sizing {
+    width: 100px;
+    height: 50px;
+    padding: 20px;
+    border: 1px solid;
+}
+
+p.intrinsic-sizing {
+    /* be only as wide as the min width of its content */
+    width: min-content; 
+    height: min-content;
+    padding: 20px;
+    border: 1px solid;
+}
+
+p.overflow {
+    width: 100px;
+    height: 50px;
+    padding: 20px;
+    border: 1px solid;
+    /* overflow sets the behaviour of content overflowing from its container */
+    overflow: auto; /* auto - scroll */
+}
+
