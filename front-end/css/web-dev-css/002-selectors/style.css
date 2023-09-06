@@ -1,0 +1,6 @@
+/* CSS selectors are used to find specific elements and apply a CSS rule */
+/* this is what a CSS rule looks like  */
+p.custom { /* p.custom is the selector */
+    font-size:x-large; /* this is a declaration which includes the property and its value*/
+    color: red; /* this is another declaration */
+}
