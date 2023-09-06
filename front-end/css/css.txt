@@ -9,10 +9,18 @@
 - Units (px, em, rem, vh…)
 
 ----------------------------------------
+<<< COMPLETED >>>
 
 *** BOX MODEL ***
 
+----------------------------------------
+<<< IN PROGRESS >>>
+
 *** SELECTORS ***
+
+----------------------------------------
+<<< NOT STARTED >>>
+
 *** THE CASCADE ***
 *** SPECIFICITY ***
 *** INHERITANCE ***
