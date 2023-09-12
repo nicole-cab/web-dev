@@ -4,3 +4,74 @@ p.custom { /* p.custom is the selector */
     font-size:x-large; /* this is a declaration which includes the property and its value*/
     color: red; /* this is another declaration */
 }
+
+/* this is the universal selector */
+/* every element will have hotpink text */
+* {
+    color: hotpink;
+}
+
+/* this is a type selector, it matches an html tag directly */
+p {
+    border: solid black 2px;
+    padding: 0.5rem;
+}
+
+/* this is a class selector */
+/* selects all elements with the class: class-selector */
+/* notes: you can't start a class name with a number like 3element */
+.class-selector {
+    font-size: 50px;
+}
+
+/* this is an ID selector */
+/* this shold only select one element with the id=rad */
+#rad {
+    font-weight: 600;
+    color: blue;
+}
+
+/* this is an attribute selector */
+/* selects elements with a certan html attribute, or have a certain value */
+[data-type='primary'] {
+    color: green;
+}
+[data-type] {
+    color:green;
+}
+/* you can use case-sensitive attribute selectors by adding an s operator */
+[data-type='primary' s] {
+    color: red;
+}
+/* for case-insensitivity use the i operator */
+/* a href that contains "example.com" */
+[href*='example.com'] {
+    color:red;
+}
+/* a href that starts with https */
+[href^='https'] {
+    color: green;
+}
+/* a href that ends with .com */
+[href$='.com'] {
+    color: blue;
+}
+
+/* this is how to group selectors: by separating them with commas */
+.class-selector, [data-type] {
+    background-color: aqua;
+}
+
+/* pseudo-classes are used to style elements at different states, like hover */
+/* this is a pseudo-class */
+a:hover {
+    outline: 3px dotted green;
+    padding: 5px;
+    background-color: aquamarine;
+}
+/* sets all even paragraphs to have a different background */
+p:nth-child(even) {
+    background: black;
+}
+
+/* this is a pseudo-element */
