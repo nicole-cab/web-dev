@@ -95,7 +95,11 @@ li::marker { /* to style the bullet points of a list */
 }
 
 /* combinators allow you to select items based on their position in the document */
-/* this is a descendant combinator: using a space between two selectors targets a child element */
-.div .p1 {
-    background-color: blue;
+/* this is a descendant combinator: using a space between two selectors targets a child or descendant element, so div could be nested many times inside .div1 and be selected recursively */
+.div1 div {
+    background-color: greenyellow;
+    color: black;
+    padding-left: 5rem;
 }
+
+/* this is a next sibling combinator: + to */
