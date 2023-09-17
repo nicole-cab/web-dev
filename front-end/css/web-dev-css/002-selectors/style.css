@@ -75,3 +75,27 @@ p:nth-child(even) {
 }
 
 /* this is a pseudo-element */
+/* they are used to insert a new element with CSS, or to target specific parts of an element */
+.button1::before {
+    content: 'I added this using ::before ';
+    color: blue;
+    font-weight: 600;
+}
+.button1::after {
+    content: ' I added this using ::after';
+    color: blueviolet;
+    font-weight: 600;
+}
+li::marker { /* to style the bullet points of a list */
+    color: green;
+}
+::selection { /* style content highlighted by a user (like clicking and dragging the mouse across text) */
+    background-color: black;
+    color: white;
+}
+
+/* combinators allow you to select items based on their position in the document */
+/* this is a descendant combinator: using a space between two selectors targets a child element */
+.div .p1 {
+    background-color: blue;
+}
