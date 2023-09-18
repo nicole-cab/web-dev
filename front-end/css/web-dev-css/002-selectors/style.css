@@ -102,4 +102,29 @@ li::marker { /* to style the bullet points of a list */
     padding-left: 5rem;
 }
 
-/* this is a next sibling combinator: + to */
+/* this is a next sibling combinator: "element +" to select the */
+/* selects all divs that immedfiately come after an element with the .next class */
+.next + div {
+    font-size: larger;
+}
+/* you can also select all next siblings of all elements in a div */
+.div2 * + * {
+    padding-top: 2rem;
+    border: solid black;
+}
+
+/* this is a general sibling selector: use ~, the sibling can be anywhere */
+.div3 p ~ h1 {
+    background-color: blueviolet;
+}
+
+/* this is a child selector: use >, it selects direct children of an element */
+.div4 > h1{
+    color: black;
+}
+
+/* this is a compound combinator: increases specificity */
+/* select <a> elements with the class link2 */
+a.link2 {
+    border: solid red;
+}
