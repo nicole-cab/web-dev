@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn CSS: 003 The Cascade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>The Cascade</h1>
+    <p>The cascade is an algorithm used to decide which CSS rule to apply if  multiple CSS rules apply to an HTML element.</p>
+    <p>It is split into 4 distinct stages:</p>
+    <ol>
+        <li><strong>Position and order of appearance:</strong> order of which CSS rules appear.</li>
+        <li><strong>Specificity:</strong> an algorithm which determines which CSS selector has the strongest match.</li>
+        <li><strong>Origin:</strong> the order of when CSS appears and where it comes from, whether that is a browser style, CSS from a browser extension, or your authored CSS.</li>
+        <li><strong>Importance:</strong> some CSS rules are weighted more heavily than others, especilly with the <code>!important</code> rule type.</li>
+    </ol>
+    <h3>Position and order of appearance</h3>
+    <ul>
+        <li>two rules with selecrors of identical specificity = selects the last one to be declared</li>
+        <li>if you have two <code>&lt;link&gt;</code> tags that include CSS = the bottom one will have most specificity (same with <code>&lt;style&gt;</code> tags)</li>
+        <li>if a <code>&lt;style&gt;</code> is first declared, then a <code>&lt;link&gt;</code> = the <code>&lt;link&gt;</code> will have most specificity (e.g. <code>&lt;style&gt;</code> delcared in the <code>&lt;head&gt;</code> and <code>&lt;link&gt;</code> in the <code>&lt;body&gt;</code>)</li>
+        <li>the inline <strong>style</strong> attribute will override all other CSS, regardless of its position, unless a declaration <code>!important</code> is defined.</li>
+        <li>if two declarations within the same declaration block specify the same property = the last one will be selected and the previous ones ignored by the browser
+        </li>
+        <ul>
+            <li>// specifying two values for the same property helps create fallbacks for browsers that don't support a particular value, if a browser doesn't support a value then it will discard that declaration, and so another one can be used, e.g. using <code>clamp()</code> to clamp the size of an element, like its font-size or width</li>
+        </ul>
+    </ul>
+    <h3>Specificity</h3>
+    <p>Order of specificity from most specificity to least:</p>
+    <ul>
+        <li>element with id > element with a class > element > </li>
+    </ul>
+    <p>Most specificity CSS rules will override all the other ones.</p>
+    <p>The more specific a selector is the more specificity therefore harder to override, e.g. <code>a.my-class.another-class[href]:hover</code>, it is recommended you keep selectors as simple as possible.</p>
+    <h3>Origin</h3>
+    <p>The order of specificity of these origins, from least specific to most:</p>
+    <ol>
+        <li><strong>User agent base styles:</strong> browser internal default stylesheet.</li>
+        <li><strong>Local user styles:</strong> these can come from the operating system level, e.g. base font. They can also come from browser extensions, e.g. allow users to write their own custom CSS.</li>
+        <li><strong>Authored CSS:</strong> CSS that you write.</li>
+        <li><strong>Authored <code>!important</code>:</strong> any <code>!important</code> that you write.</li>
+        <li><strong>Local user styles <code>!important</code>:</strong> any <code>!important</code> that come from the operating system level, or browser extension level CSS.</li>
+        <li><strong>User agent <code>!important</code>:</strong> any <code>!important</code> that are defined in the default CSS, provided by the browser.</li>
+    </ol>
+    <img src="origin.svg" alt="order of specificity" width="100%">
+    <h3>Importance</h3>
+    <p>Order of importance, from least important to most:</p>
+    <ol>
+        <li>normal rule type, such as <code>font size</code>, <code>background</code> or <code>color</code></li>
+        <li><code>animation</code> rule type</li>
+        <li><code>!important</code> rule type (folling the same order as origin)</li>
+        <li><code>transition</code> rule type </li>
+    </ol>
+
+</body>
+</html>
