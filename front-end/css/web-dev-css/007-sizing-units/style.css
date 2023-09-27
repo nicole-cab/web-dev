@@ -1,0 +1,26 @@
+code {
+    background-color: lightpink;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+div.test {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: solid red;
+    max-width: 20ch;
+}
+
+p.lorem {
+    max-width: 15ch;
+}
+
+img {
+    width: 50%;
+}
+
+div.angle {
+    transform: rotate(50deg) translatex(100px);
+    width: 150px;
+    height: 150px;
+    background-color: aqua;
+    margin-bottom: 110px;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn CSS: 007 Sizing Units</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>007 Sizing Units</h1>
+    <hr />
+    <div>
+      <h2><u>ch</u></h2>
+      <p>
+        <code>ch</code>: 1ch is equal to the width of the character "zero" in
+        whatever font family you are using, e.g the max-width of this div is
+        20ch which is equal to 20 zeroes:
+      </p>
+      <ul>
+        <li>
+          <div class="test">
+            Look, 20 characters.
+            <br />
+            12345678901234567890
+            <br />
+            00000000000000000000
+          </div>
+        </li>
+        <li>
+          for a variable-width font, any given charcter could be wider or
+          narrower than the width of its zero, so it is recommended you use
+          <code>ch</code> when using fixed-width font families.
+        </li>
+        <li>
+          <div>
+            <h3>This lolerm ipsum paragraph has max-width 15ch:</h3>
+            <p class="lorem">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae amet
+              reprehenderit laudantium a, voluptates ab consequatur vitae
+              commodi blanditiis eaque.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <hr />
+    <div>
+      <h2><u>Numbers</u></h2>
+      <p>
+        numbers as values can represent different things, for example for the
+        property <code>line-height</code> its unitless value would represent the
+        ratio proportional to the element's pixel font size, e.g. if
+        <code>font-size: 24px</code> then <code>line-height: 1.5</code> would be
+        150% of 24px which is 36px
+      </p>
+      <p><code>filter: sepia(0.5)</code> applies a 50% sepia filter</p>
+      <p><code>opacity: 0.5</code> applies a 50% opacity</p>
+      <p><code>rgb(50, 50, 50)</code> represent the rgb values</p>
+      <p>
+        <code>transform: scale(1.2)</code> scales the element by 120% of its
+        intial size
+      </p>
+    </div>
+    <hr />
+    <div>
+      <h2><u>Percentages</u></h2>
+      <p>
+        percentages in <code>width</code>, <code>margin</code> or
+        <code>padding</code> is the percentage of the parent's width
+      </p>
+      <p>
+        percetages in <code>transform</code> is based on the element applying a
+        transformation, e.g. if its <code>width</code> is 150px than
+        <code>transform: translateX(10%)</code> would be 15px
+      </p>
+    </div>
+    <hr />
+    <div>
+      <h2><u>Dimensions and lengths</u></h2>
+      <p>the unit attached to a number is referred to as a dimension token</p>
+      <p>
+        lengths are dimensions that refer to distance and can either be absolute
+        or relative
+      </p>
+      <h3>absolute lengths</h3>
+      <img src="units.png" alt="absolute units" />
+      <h3>relative lengths</h3>
+      <p>
+        relative lengths are calculated based on context, e.g.
+        <code>1ch</code> is equal to the width of the font's zero character
+      </p>
+      <p><code>vw</code> is relative to the width of the viewport</p>
+      <p><strong>Font-size-relative units</strong></p>
+      <img src="units2.png" alt="relative units" />
+      <p><code>font-size</code>:</p>
+      <img src="font-size.png" alt="font-size" />
+      <h3>viewport-relative lengths</h3>
+      <img src="viewport.png" alt="viewport-relative units" />
+    </div>
+    <br />
+    <div>
+      <h2><u>Miscellaneous units</u></h2>
+      <h3>Angle units</h3>
+      <div>
+        <p>
+          angle units include, <code>deg</code> (degrees),
+          <code>rad</code> (radians), <code>grad</code> (gradians) and
+          <code>turn</code> (1turn = 360deg).
+        </p>
+        <p>e.g. <code>transform: rotate(60deg);</code></p>
+      </div>
+      <div></div>
+      <div class="angle"></div>
+      <h3>resolution units</h3>
+      <p><code>dpi</code>: dots per inch</p>
+    </div>
+  </body>
+</html>
