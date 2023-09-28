@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn CSS: 010 Grid</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>010 Grid</h1>
+    <h3>grid terminology</h3>
+    <ul>
+      <li>
+        grid lines: if you have a grid with 4 columns then there is 5 grid
+        column lines, the lines are numbered starting from 1, following the
+        writing-mode and script direction, e.g. if writing is from left to right
+        like english then 1 will be on the left, but it writing is right to left
+        like arabic then 1 will be on the right
+      </li>
+      <li>
+        grid tracks: a track is the space between two grid lines, so a grid row
+        track would be the space between two row lines and a clumn track would
+        be the space between two column tracks (a grid row track is just a row)
+      </li>
+      <li>
+        grid cell: like a cell in a spreadsheet, by default each item is laid
+        out one item into each defined cell
+      </li>
+      <li>
+        grid area: several grid cells together, created by causing an item to
+        span over multiple tracks
+      </li>
+      <li>gaps: space between tracks, you can't place content into a gap</li>
+      <li>grid container: "display: grid"</li>
+      <li>grid item: item which is a direct child of the grid container</li>
+    </ul>
+    <h3>rows and columns</h3>
+    <p>
+      - grid with, 3 column tracks (5em 100px 30%), 2 row tracks (200px auto)
+      and 10px gap between tracks: (tracks are auto sized by default - as big as
+      their content)
+    </p>
+    <div class="grid">
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+    </div>
+    <p><strong>intrinsic sizing keywords</strong></p>
+    <ul>
+      <li>min-content: track is as small as it can be without overflowing</li>
+      <li>
+        max-content: track becomes as wide enough for all of the content to
+        display in one long unbroken string - can cause overflow as string will
+        not wrap
+      </li>
+      <li>
+        fit-content(): acts like a max-content at first, however once the track
+        reaches the size you pass into the function, the content starts to wrap
+      </li>
+    </ul>
+    <p>- auto sized tracks are stretched to fit the container by default</p>
+    <p><strong>the fr unit</strong></p>
+    <p>- you can use fr to space out items using fractions</p>
+    <p><strong>the minmax() function</strong></p>
+    <p>
+      - minmax(min_size, max_size) is used to set the min and max size for a
+      track
+    </p>
+    <p>- fr units can be used inside the minmax() function</p>
+    <p>
+      - to force a track to take an equal share of the space in the grid
+      container minus gaps use minmax, use minmax(0, 1fr), this makes the
+      minimum size of the track 0 and not the min-content size
+    </p>
+    <p><strong>repeat() function</strong></p>
+  </body>
+</html>
