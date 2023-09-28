@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn CSS: 009 Flexbox</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>009 Flexbox</h1>
+    <p>
+      - the main axis is the value set by "flex-direction: row | column", and
+      the cross axis would the the other direction
+    </p>
+    <div class="parent">
+      <div class="child">One</div>
+      <div class="class">Two</div>
+      <div class="child">Three</div>
+    </div>
+    <p>
+      - by default: items are displayed as a row, they don't wrap, they don't
+      grow to fill the container, they line up at the start of the container
+    </p>
+    <h3>direction of items</h3>
+    <p>- flex-direction: row | row-reverse | column | column-reverse</p>
+    <p>
+      - you can use the property writing mode to change the direction of
+      writing, e.g. if writing-mode:vertical-rl, then flex-direciton:row becomes
+      top to bottom
+    </p>
+    <div class="mode">
+      <div>one</div>
+      <div>two</div>
+      <div>three</div>
+    </div>
+    <p>
+      - the start of the main direction is known as the "main-start", same with
+      "main-end", "cross-start" and "cross-end"
+    </p>
+    <h3>wrapping flex items</h3>
+    <p>
+      - the initial value of flex-wrap: nowrap, meaning if there isn't enough
+      space in the container the items will overflow, items will shrink as small
+      as they can, down to the min-content size before overflow happens
+    </p>
+    <p>
+      - to wrap use flex-wrap: wrap, when a flex container wraps it creates
+      multiple flex lines, each flex line acts as its own flex container
+      therefore you can't line up something in row 2 with something in row1
+    </p>
+    <p>
+      - you can set both flex-direction and flex-wrap in shorthand using
+      flex-flow, e.g. "flex-flow: column wrap;"
+    </p>
+    <h3>controlling space inside flex items</h3>
+    <p>
+      - given that there has more spacen in the flex container after the items
+      are displayed, the items will not grow to fill this space, they stop
+      growing at their max-content size, this is because the initial values of
+      the flex- properties is:
+    </p>
+    <ul>
+      <li>flex grow: 0; items don't grow</li>
+      <li>flex-shrink: 1; items can shrink smaller than their flex-basis</li>
+      <li>flex-basis: auto; items have a base size of auto</li>
+    </ul>
+    <p>- the above list can be represented using flex: initial</p>
+    <p>
+      - flex: auto; makes the items grow (up to their max-content size),
+      allowing large items to have more space than small ones, flex: auto has
+      the following properties
+    </p>
+    <ul>
+      <li>flex-grow: 1; items can grow larger than their flex-basis</li>
+      <li>flex-shrink: 1; items can shrink smaller than their flex-basis</li>
+      <li>flex-basis: auto; items have a base size of auto</li>
+    </ul>
+    <p>- width: max-content | min-content | fit-content</p>
+    <ul>
+      <li>max-content: ideal size if there was unlimited space</li>
+      <li>min-content: min size the box could take without overflowing</li>
+      <li>
+        fit-content: mix of max and min-content, if there is enough space use
+        max-content, if not use min-content
+      </li>
+    </ul>
+    <p>
+      - to make all the items have consistent size use "flex: 1" which is
+      equivalent to:
+    </p>
+    <ul>
+      <li>flex-grow: 1; all items grow equally</li>
+      <li>flex-shrink: 1</li>
+      <li>
+        flex-basis: 0; all items have 0 size therefore all of the space in the
+        flex container is available to be distributed
+      </li>
+    </ul>
+    <p>
+      - flex: none; items don't shrink or grow, this is purely used to access
+      the alignment properties of flexbox without the flexible behaviour
+    </p>
+    <p>
+      - you can individually define how much each item grows and shrinks, e.g:
+    </p>
+    <div class="flex">
+      <div class="item1">one</div>
+      <div class="item2">two</div>
+      <div class="item3">three</div>
+    </div>
+    <p>- flex: 1 is the same as flex-grow: 1 (remember the shorthand)</p>
+    <p>
+      - above shows how item1 will always take up 1/6 of the space item2=2/6 and
+      item3=3/6 no matter the size of the page, it is useful for responsive
+      websites
+    </p>
+    <p>
+      - flex: 1 1 auto; is shorthand for flex-grow, flex-shrink and flex-basis
+    </p>
+    <h3>reordering flex items</h3>
+    <p>
+      - items can be ordered using the order property, for e.g. if you want a
+      specific item to be placed 3rd in a row you can use order: 3, if multiple
+      items have the same order then they will be displayed together the first
+      element defined going first
+    </p>
+    <p>
+      - it is not recommended to the order property as it can cause some
+      problems, change your logical order in html instead!
+    </p>
+    <h3>flexbox alignment overview</h3>
+    <p><strong>properties for space distribution</strong></p>
+    <ul>
+      <li>justify-content: space distribution on the main axis</li>
+      <li>align-content: space distribution on the cross axis</li>
+      <li>place-content: shorthand for setting both</li>
+    </ul>
+    <p><strong>properties for alignment</strong></p>
+    <ul>
+      <li>align-self: aligns a single item on the cross axis</li>
+      <li>align-items: aligns all the items as a group on the cross axis</li>
+    </ul>
+    <h3>distributing space on the main axis</h3>
+    <p>- you can use the following properties</p>
+    <ul>
+      <li>
+        - for the main axis use "justify-content: flex-start | flex-end |
+        space-between | center | space-around | space-evenly | initial |
+        inherit"
+      </li>
+      <li>
+        - for the cross axis use the same property but you need to specify the
+        height of the container to have space, you don't need to do this
+        horizontally since divs span across the entire line
+      </li>
+    </ul>
+    <h3>distributing space between flex lines</h3>
+    <p>
+      - you can use align-content with the same values as justify-content to
+      distribute the flex lines on the cross axis, the initial value of
+      align-content is stretch, (align-content is like justify-content but for
+      flex lines)
+    </p>
+    <p>
+      - place-content is shorthand for justify-content and align-content, if you
+      only specify one value then it applies it to both, if two values, then the
+      first value is align-content, second is justify-content
+    </p>
+    <h3>aligning items on the cross-axis</h3>
+    <p>
+      - in the cross axis you can align items within the flex line using
+      align-items and align-self
+    </p>
+    <p>
+      - the initial value of align-self is stretch which makes the all the items
+      stretch to the height of the tallest item by default
+    </p>
+    <p>- align-item has the following values:</p>
+    <ul>
+      <li>flex-start</li>
+      <li>flex-end</li>
+      <li>center</li>
+      <li>stretch</li>
+      <li>baseline</li>
+    </ul>
+    <hr />
+    <p>
+      - flexbox works well with auto margins, it allows you to split items into
+      groups: (item3 has margin-left: auto)
+    </p>
+    <div class="auto-margin">
+      <div>one</div>
+      <div>two</div>
+      <div class="item3">three</div>
+    </div>
+    <hr />
+    <h3>center an item vertically and hortizontally</h3>
+    <p>- use justify-content: center and align-items: center</p>
+    <div class="center"><div>center</div></div>
+  </body>
+</html>

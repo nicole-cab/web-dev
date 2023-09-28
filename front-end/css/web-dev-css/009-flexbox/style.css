@@ -1,0 +1,58 @@
+div.parent {
+    display: flex;
+    border: solid red;
+}
+
+div.mode {
+    border: solid red;
+    writing-mode: vertical-rl;
+}
+
+div.flex {
+    border: solid red;
+    display: flex;
+    padding: 1rem;
+}
+
+div.flex * {
+    border: solid blue;
+}
+
+div.flex div.item1 {
+    flex: 1;
+}
+div.flex div.item2 {
+    flex: 2;
+}
+div.flex div.item3 {
+    flex: 3;
+}
+
+div.auto-margin {
+    display: flex;
+    border: solid green;
+    padding: 1rem;
+}
+
+div.auto-margin div.item3 {
+    margin-left: auto;
+}
+
+div.auto-margin  * {
+    border: solid red;
+     padding: 1rem;
+}
+
+div.center{
+    border: solid green;
+    padding: 1rem;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.center > *{
+    border: solid red;
+}
