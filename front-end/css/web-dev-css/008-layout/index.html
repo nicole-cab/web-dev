@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn CSS: 008 Layout</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>008 Layout</h1>
+    <div class="sticky">sticky</div>
+    <p>
+      - you can't set an explicit width and height on inline elements, any block
+      level margin and padding will be ignored by the surrounding elements
+    </p>
+    <h3>flexbox</h3>
+    <p>
+      - display:flex makes the parent a block-level box and converts its
+      children to flex items
+    </p>
+    <p>
+      - there are two main layout mechanisms that create layout rules for
+      multiple elements: flexbox and grid
+    </p>
+    <p>
+      - flexbox is for one-dimensional layouts, layouts across one axis
+      (horizontal or vertical), by default flexbox will align the element's
+      children next to each other, in the inline direction, and stretch them in
+      the block direction, so they are all the same height. items will try to
+      squash onto the same line as each other, they will not wrap when they run
+      out of space, the properties align-items, justify-content and flex-wrap
+      can be used to change this behaviour
+    </p>
+    <p>
+      - in flexbox, the flex property can be used to control how the flex
+      container and its children shrink or grow, the flex property is shorthand
+      for flex-grow, flex-shrink and flex-basis e.g. "flex: 1 0 auto"
+    </p>
+    <h3>grid</h3>
+    <p>
+      - display:grid is similar to flexbox but it used for multi-axis layouts
+      instead of single-axis layouts - when using display: grid, the repeat()
+      and minmax() functions can be used for layout styling
+    </p>
+    <p>
+      - a useful grid unit is the "fr" unit - which is a fraction of remaining
+      space
+    </p>
+    <p>
+      - in a grid container, grid-template-columns is a property used to define
+      the size and number of columns, and the property gap is used to define the
+      size of the gap between grid items
+    </p>
+    <p>
+      - you can specify the position of a specific item in the grid using
+      grid-row and grid-column
+    </p>
+    <h2>flow layout</h2>
+    <p>
+      - when not using flexbox or grid, your elements display in normal flox
+    </p>
+    <p>
+      - in inline elements surrounding elements don't respect block margin and
+      padding, you can use inline-block to make it
+    </p>
+    <h3>floats</h3>
+    <p>
+      - the float property instructs an element to "float" to the direction
+      specified, e.g. make img float: left, which then allows sibling elements
+      to "wrap" aroung it. the float property can make elements float left,
+      right or inherit, to control the flow of the elements after the floated
+      elements, use the property clear or using displat: flow-root which always
+      establishes a new block formatting context for its contents
+    </p>
+    <h3>multicolumn layout</h3>
+    <p>
+      - you can also split a long list into multiple columns in normal flow
+      using column-count or column-width (instead of specifying the number of
+      columns), and column-gap
+    </p>
+    <h3>positioning</h3>
+
+    <p>
+      - the position property controls how an element in normal flow behaves, it
+      has the following values: relative, absolute, fixed and sticky with the
+      default being static
+    </p>
+    <p>
+      - position:relative is positioned relative to its normal position, you can
+      use the top, right, bottom and right properties to position them relative
+      to itself. all the content surrounding the element will not reflow to fill
+      the remaining space left by the relative element
+    </p>
+    <p>
+      - position:absolute breaks the element out of the current document flow ,
+      you can also use top, bottom, right and left to position the element in
+      its nearest relative parent. all the content surrounding an absolute
+      element reflows to fill the remaining space left by the absolute element
+    </p>
+    <p>
+      - position:fixed is similar to absolute, with its parent being the root
+      html element, they stay anchored from the top left based on the top,
+      right, bottom and left values
+    </p>
+    <p>
+      - position:sticky makes the element stay anchored to the top, right,
+      bottom and left values relative to itself, even when a used viewport
+      scrolls past the element, it becomes fixed
+    </p>
+  </body>
+</html>

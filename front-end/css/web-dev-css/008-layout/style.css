@@ -1,0 +1,8 @@
+.sticky {
+    border: solid red;
+    width: fit-content;
+    height: fit-content;
+    position: sticky;
+    top: 1.5rem;
+    left: 3rem;
+}
