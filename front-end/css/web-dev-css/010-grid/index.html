@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1>010 Grid</h1>
-    <h3>grid terminology</h3>
+    <h3>Grid Terminology</h3>
     <ul>
       <li>
         grid lines: if you have a grid with 4 columns then there is 5 grid
@@ -34,7 +34,7 @@
       <li>grid container: "display: grid"</li>
       <li>grid item: item which is a direct child of the grid container</li>
     </ul>
-    <h3>rows and columns</h3>
+    <h3>Rows and Columns</h3>
     <p>
       - grid with, 3 column tracks (5em 100px 30%), 2 row tracks (200px auto)
       and 10px gap between tracks: (tracks are auto sized by default - as big as
@@ -75,5 +75,83 @@
       minimum size of the track 0 and not the min-content size
     </p>
     <p><strong>repeat() function</strong></p>
+    <p>
+      - "grid-template-columns: repeat(number of times, what to repeat), e.g.
+      repeat(12, minmax(0, 1fr))" to create 12 equal columns
+    </p>
+    <p>- "grid-template-columns: 200px repeat(2, 1fr 2fr) 200px":</p>
+    <div class="grid2">
+      <div>200px</div>
+      <div>1fr</div>
+      <div>2fr</div>
+      <div>1fr</div>
+      <div>2fr</div>
+      <div>200px</div>
+    </div>
+    <p>- "grid-template-columns: 200px repeat(3, 1fr) 200px 3fr":</p>
+    <div class="grid3">
+      <div>200px</div>
+      <div>1fr</div>
+      <div>1fr</div>
+      <div>1fr</div>
+      <div>200px</div>
+      <div>3fr</div>
+    </div>
+    <p><strong>auto-fill and auto-fit</strong></p>
+    <p>
+      - "grid-template-columns: repeat(auto-fill, 200px)" will fill as many
+      200px as possible in a row before going to the next row:
+    </p>
+    <div class="grid4">
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+    </div>
+    <p>
+      - in the above demo the tracks don't stretch to the end of the container,
+      there is a gap at the end, to make the items stretch use this:
+    </p>
+    <div class="grid5">
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+    </div>
+    <p>
+      - of you use the auto-fit keyword the tracks collapse down to 0 size, this
+      means that the flexible tracks now grow to consume the space
+    </p>
+    <div class="grid6">
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+    </div>
+    <h3>Auto-placement</h3>
+    <p>- auto-placement: one element/item per cell</p>
+    <p><strong>placing items in columns</strong></p>
+    <p>
+      - the default behaviour of grid layout is to place the items along the
+      rows, you can instead cause the items to place into columns using
+      "grid-auto-flow: column", you need to define row tracks or else the items
+      will create column tracks and layout out all in one long row
+    </p>
+    <p>
+      - grid-auto-flow: row; runs in the direction of the writing mode e.g. in
+      english we write from left to right
+    </p>
   </body>
 </html>

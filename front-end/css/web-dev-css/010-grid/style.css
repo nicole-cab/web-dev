@@ -9,3 +9,41 @@ div.grid {
 div.grid > * {
     border: solid blue;
 }
+
+div.grid2, div.grid3 {
+    display: grid;
+    border: solid green;
+}
+
+div.grid2 > *, div.grid3 > * {
+    border: solid red;
+}
+
+div.grid2 {
+    grid-template-columns: 200px repeat(2, 1fr 2fr) 200px;
+}
+
+div.grid3 {
+    grid-template-columns: 200px repeat(3, 1fr) 200px 3fr ;
+}
+
+div.grid4, div.grid5, div.grid6 {
+    border: solid green;
+    display: grid;
+}
+
+div.grid4 {
+    grid-template-columns: repeat(auto-fill, 200px);
+}
+
+div.grid5 {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+div.grid6 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+div.grid4 > *, div.grid5 > *, div.grid6 > * {
+    border: solid red;
+}
