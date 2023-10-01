@@ -153,5 +153,79 @@
       - grid-auto-flow: row; runs in the direction of the writing mode e.g. in
       english we write from left to right
     </p>
+    <p><strong>spanning tracks</strong></p>
+    <p>
+      - you can cause some or all of the items in an auto-placed layout to span
+      more than one track:
+    </p>
+    <ul>
+      <li>
+        "grid-column-start: number | span n | auto" to define what column the
+        item starts
+        <br />number = column it starts <br />span n = number of columns the
+        item should span/take up <br />auto = follows normal flow which is one
+        item per cell
+      </li>
+      <li>
+        "grid-column-end: number | span a | auto" to define what column the item
+        ends <br />number = column it ends <br />span n = number of columns the
+        item should span/take up <br />auto = 1 column per item
+      </li>
+      <li>
+        "grid-column: grid-column-start_value / grid-column-end_value" is the
+        shorthand version
+      </li>
+    </ul>
+    <p><strong>filling gaps</strong></p>
+    <p>
+      - the default behaviour of grid is to fill up a track as much as possible
+      before moving on to the next track, so if you span items across many
+      columns this may cause gaps to be created, one way to make good use of
+      space is by using "grid-auto-flow: dense" which will try to put smaller
+      items into the gaps to fill it in, this means that the order of the items
+      may not follow the correct order
+    </p>
+    <div class="test">
+      <div class="item1">item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div class="item5">item</div>
+      <div>item</div>
+      <div>item</div>
+    </div>
+    <h3>Placing Items</h3>
+    <p>- you can place items using the following properties:</p>
+    <ul>
+      <li>grid-column-start</li>
+      <li>grid-column-end</li>
+      <li>grid-row-start</li>
+      <li>grid-row-end</li>
+      <li>grid-columm</li>
+      <li>grid-row</li>
+    </ul>
+    <p>
+      - remember that the line order follows the writing mode and direction of
+      the component, i.e if writing-mode: horizontal-tb (english) then
+      "grid-row: auto / span 2" would look like this:
+    </p>
+    <div class="row">
+      <div class="item1">item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+    </div>
+    <p><strong>stacking items</strong></p>
+    <p>
+      - you can make items overlap each other in grids when spanning them across
+      columns, you can use the z-index property to place an item on top of the
+      other, the higher number the more items it will cover
+    </p>
+    <h3>Named grid lines</h3>
+    <p>-</p>
+    <h3>Grid Template Areas</h3>
+    <h3>Shorthand Properties</h3>
+    <h3>Alignment</h3>
   </body>
 </html>

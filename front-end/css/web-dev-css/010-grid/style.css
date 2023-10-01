@@ -47,3 +47,34 @@ div.grid6 {
 div.grid4 > *, div.grid5 > *, div.grid6 > * {
     border: solid red;
 }
+
+div.test {
+    display: grid;
+    border: solid red;
+    grid-template-columns: repeat(5, auto);
+}
+
+div.test > * {
+    border: solid blue;
+}
+
+div.test div.item1 {
+    grid-column-end: span 2;
+}
+
+div.test div.item5 {
+    grid-column-start: 2;
+}
+
+div.row {
+    border: solid red;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+div.row > * {
+    border: solid blue;
+}
+
+div.row div.item1 {
+    grid-row: auto / span 2;
+}
