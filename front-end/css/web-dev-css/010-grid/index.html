@@ -223,9 +223,92 @@
       other, the higher number the more items it will cover
     </p>
     <h3>Named grid lines</h3>
-    <p>-</p>
+    <p>
+      - instead of refering to track lines using numbers, you can name them by
+      declaring the name of the line inside square brackets before defining the
+      size of the column: "grid-template-columns: [line-one] 1fr [line-two] 3fr
+      [line-three];" this would make a layout with 2 columns and 3 track lines
+    </p>
+    <p>
+      - you can also use multiple names for a track line: [name-one name-two]
+    </p>
     <h3>Grid Template Areas</h3>
+    <p>
+      - you can name grid areas by naming the direct children/items of the grid
+      container using "grid-area: name-goes-here;" then using
+      "grid-template-areas" in the grid container to define which grid cells
+      each item will span e.g. the children are named, header, sidebar, footer
+      and the areas are the defined:
+    </p>
+    <ul>
+      <li>
+        grid-template-areas: <br />"header header header header" <br />"sidebar
+        content content content" <br />"sidebar footer footer footer"
+      </li>
+      <li>
+        this would create a layout with 4 columns and 3 rows with 4 areas
+        spanning across the corresponding cells
+      </li>
+      <li>
+        area names can be anything you like other than the keywords "auto" and
+        "span"
+      </li>
+      <li>grid must have no empty cells</li>
+      <li>the areas have to be rectangular and cannot be disconnected</li>
+      <li>
+        to leave white space in the grid use a "." or multiples with no white
+        space between them e.g.
+      </li>
+      <ul>
+        <li>
+          grid-template-areas: <br />"....... header header header"
+          <br />"sidebar sidebar content content" <br />"sidebar footer footer
+          footer"
+        </li>
+        <li>
+          remember that grid-template-areas relates to writing-mode and
+          direction
+        </li>
+      </ul>
+    </ul>
     <h3>Shorthand Properties</h3>
+    <p><strong>grid-template</strong></p>
+    <p>
+      - grid-template is shorthand for grid-template-rows, grid-template-columns
+      and grid-template-areas
+    </p>
+    <p>
+      - rows are defined first along with the value of grid-template-areas,
+      column sizing is added after a /
+    </p>
+    <ul>
+      <li>
+        grid-template: <br />"head head head" minmax(150px, auto) <br />"sidebar
+        content content" auto <br />"sidebar footer footer" auto / 1fr 1fr 1fr;
+      </li>
+    </ul>
+    <p><strong>grid property</strong></p>
+    <p>- the grid property is shorthand for:</p>
+    <ul>
+      <li>grid-template-rows</li>
+      <li>grid-template-columns</li>
+      <li>grid-template-areas</li>
+      <li>grid-auto-rows</li>
+      <li>grid-auto-columns</li>
+      <li>grid-auto-flow</li>
+    </ul>
     <h3>Alignment</h3>
+    <p>
+      - justify-content and align-content distribute additional space in the
+      grid container around or between tracks
+    </p>
+    <p>
+      - justify-self and align-self are applied to a grid item to move it around
+      inside the grid area it is placed in
+    </p>
+    <p>
+      - justify-tems and align-items are applied to the grid container to set
+      all of the justify-self properties ont he items
+    </p>
   </body>
 </html>
