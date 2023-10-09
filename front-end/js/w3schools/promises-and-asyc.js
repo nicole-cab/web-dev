@@ -159,3 +159,46 @@ p.then((result) => {
 // --------------------------------------------------
 
 // USING Promise.all()
+
+// Promise.all(iterable) is a static method that takes an iterable of promises, it returns a single promise that resolves when all the input promises have been resolved, the returned single promise resolves to an array of the results of the input promises
+// in other words Promise.all() waits for all the input promises to resolve and returns a new promise that resolves to an array containing the results of the input promises
+
+// as soon as one of the input pomises is rejected, the Promise.all() method immediately returns a promise that is rejected with an error of the first rejected promise
+
+// all promises are processed at the same time, and which ever gets rejected first, this error will be returned by Promise.all()
+// it waits for all promises to be resolved before returning a promise
+
+// in practice Promise.all() is useful to aggregate the results from multiple async operations
+
+// Promise.all([p1, p2, p3]).then((results) => { console.log(results); });
+
+
+// --------------------------------------------------
+
+// USING Promise.race()
+
+// Promise.race() is a static method that accepts a list of promises as an iterable object and returns a new promise that fulfills or rejects as soon as there is one promise that fulfills or rejects, with the value or error from that promise
+
+// the name Promise.race() implies that all the promises race against each other with a single winner, either resolved or rejected, basically Promise.race() returns the result of the input promises that resolves faster, and it could be either fulfilled or rejected
+
+// Promise.race([p1, p2, p3]).then((result) => { console.log(result); });
+
+
+// --------------------------------------------------
+
+// USING Promise.any()
+
+// Promise.any() accepts an iterable object
+
+// if one of the input promises is fulfilled, Promise.any() returns a single promise that resolves to a value which is the result of the fulfilled promise
+// it returns the first fulfilled promise, even if the previous ones have been rejected it only focuses on the first fulfilled input promise
+
+// if all the input promises are rejected, Promise.any() will return a promise that rejects with an AggregateError (subclass of Error) containing all the rejection reasons
+
+// use Promise.any() to return the first fulfulled promise, once an input promise is fulfilled, Promise.any() does not wait for other promises to complete
+
+// case use: you have resource served by two or more content delivery networks, to dynamically load the first available resource, you can use Promise.any()
+
+// --------------------------------------------------
+
+// USING Promise.allSettled()
