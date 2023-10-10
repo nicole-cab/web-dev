@@ -202,3 +202,85 @@ p.then((result) => {
 // --------------------------------------------------
 
 // USING Promise.allSettled()
+
+// Promise.allSettled() accepts a list of promises and returns a new promise that resolves after all the input promises have settled, either resolved or rejected
+
+// it returns a promise that stays pending until all input promises have been settled either fulfilled or rejected, the returned promise resolves into an array of objects, each object containing the following properties: status and value/reason, which describes the result of each input promise
+
+// let's say we have promise1 and promise2, then
+
+// Promise.allSettled([p1, p2]).then((result) => {
+//     console.log(result);
+// });
+
+// returns an Array object:
+//  [{ status: 'fulfilled', value: 10 }, { status: 'rejected', reason: 20 }]
+
+// --------------------------------------------------
+
+// PROMISE ERROR HANDLING
+
+// let's say we have a function getUser(id) that returns a promise which resolves with an object as the value with the properties username and id
+
+// to catch errors such as checking the id is a number you have two options:
+
+// OPTION1: throw an error outside the returned promise
+//      this can be caught by try..catch.. like this
+
+function getUser(id) {
+    if (typeof id !== 'number' || id <= 0) { // outside promise
+        throw new Error('Invalid id argument');
+    }
+
+    return new Promise((resolve, reject) => {
+        resolve({
+            id: id,
+            username: 'admin'
+        });
+    });
+}
+
+// try..catch will catch the error and NOT .catch()
+try {
+    let id = 3;
+    let user = getUser(id);
+    console.log(user);
+} catch (error) {
+    console.log(error);
+}
+
+// OPTION2: throw an error inside the returned promise, the .catch() method will catch this as throwing an error inside a promise has the same effect as calling the reject() method
+
+function getUser2(id) {
+
+    return new Promise((resolve, reject) => {
+        if (typeof id !== 'number' || id <= 0) { // inside promise
+            throw new Error('Invalid id argument');
+        }
+
+        resolve({
+            id: id,
+            username: 'admin'
+        });
+    });
+}
+
+function getUser3(id) {
+    let authorized = false;
+
+    return new Promise((resolve, reject) => {
+        if (!authorized) {
+            reject('Unauthorized access to the user data'); // same as throwing an error
+        }
+
+        resolve({
+            id: id,
+            username: 'admin'
+        });
+    });
+}
+
+// you can either throw an error inside the promise or call reject(), both errors can be caught by .catch() and NOT by try..catch
+
+// if you throw an error inside a promise or call reject() but don't use
+//      .catch(), the code after getUser(id).then(...) will not execute because it will cause a runtime error and the program will terminate
