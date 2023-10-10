@@ -353,7 +353,7 @@ class Greeter {
 // if a promise resolves, the "await promise" returns the result
 // when the promise is rejected, the "await promise" will throw an error as if there were a throw statement, the async function will throw an error
 
-// you can use try...catch ti catch the error
+// you can use try...catch to catch the error
 
 // async function getUser(userId) {
 //     try {
