@@ -1,0 +1,9 @@
+*** WHAT IS REACT? ***
+
+- react is a declarative, component-based user interface library
+
+- DECLARATIVE: you describe what you want but don't specify how to get it done
+
+- COMPONENT-BASED: each component can be created, run and tested separately, then combined to create an app
+
+- USER INTERFACE LIBRARY: focuses on solving one problem, creating user interfaces
