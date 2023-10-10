@@ -1,0 +1,11 @@
+- npm is a library or a registry which contains code packages written by  various developers
+
+- is a large public database of JS code that developers from all over the world can use to share and borrow code
+
+- if you author a "code package" you can publish it to the npm registry for others to use
+
+- npm is a software package manager, a command line interface tool lets use manage packages in a project
+
+- other package managers also exist like: pnpm and yarn
+
+- npm is the default package manager for Node.js, and it is installed when you install Node.js

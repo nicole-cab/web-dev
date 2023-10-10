@@ -1,0 +1,13 @@
+*** HOW TO CREATE A REACT APP USING npm ***
+
+>>> npx create-react-app name-of-app --user-npm
+
+or using Vite
+
+>>> npm create vite@latest
+// select React as the framework
+// select TypeScript as the variant
+// go to project directory and run
+    >>> npm install
+// then ru the web server using
+    >>> npm run dev
