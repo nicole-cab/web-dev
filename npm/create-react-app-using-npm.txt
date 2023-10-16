@@ -11,3 +11,7 @@ or using Vite
     >>> npm install
 // then ru the web server using
     >>> npm run dev
+
+// WHEN YOU ARE READY TO DEPLOY TO PRODUCTION, CREATE A MINIFIED BUNDLE WITH:
+
+>>> npm run build
