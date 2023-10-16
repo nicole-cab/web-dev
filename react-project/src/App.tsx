@@ -1,4 +1,6 @@
+import { useState } from "react";
 import "./App.css";
+import InputField from "./components/InputField.tsx";
 
 // *** TYPESCRIPT TYPES *** -------------------------
 
@@ -101,9 +103,12 @@ type StringOrNumber = string | number;
 
 // function/component name must start with an upper case letter
 const App: React.FC = () => {
+  const [todo, setTodo] = useState<string>("");
+
   return (
     <div className="App">
-      <span className="heading">Taskify</span>
+      <span className="heading">TASKIFY</span>
+      <InputField todo={todo} setTodo={setTodo} />
     </div>
   );
 };
