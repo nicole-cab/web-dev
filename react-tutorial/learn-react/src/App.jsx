@@ -25,20 +25,36 @@ const largeBlock = (
 );
 
 // you must wrap HTML code in one top level element, e.g. if you want to write two paragraphs you must put them inside a parent element like a div
-// alternetively you can use a "fragment" to wrap multiple lines, to prevent unnecessarily adding extra nodes to the DOM
 const twoPar = (
   <div>
     <p>First paragraph</p>
     <p>Second paragraph</p>
   </div>
 );
-
+// alternatively you can use a "fragment" to wrap multiple lines, to prevent unnecessarily adding extra nodes to the DOM
 const twoPar2 = (
   <>
     <p>First paragraph 2</p>
     <p>Second paragraph 2</p>
   </>
 );
+
+// close tags with no end tags like this
+const myInput = <input type="text" />;
+
+// we use "className" instead of "class" when using element attributes as "class" is a reserved keyword in js
+const myHeading1 = <h1 className="my-class">Hello World</h1>;
+
+// react supports if statements, but not inside JSX
+// you have two options: write if statements outside the JSX code
+const x = 5;
+let text = "Goodbye";
+if (x < 10) {
+  text = "Hello";
+}
+const myText = <h1>{text}</h1>;
+// or use a ternary expression instead
+const myText2 = <h1>{x < 10 ? "Hello2" : "Goodbye2"}</h1>;
 
 function App() {
   return (
@@ -50,6 +66,9 @@ function App() {
       {largeBlock}
       {twoPar}
       {twoPar2}
+      {myInput}
+      {myText}
+      {myText2}
     </div>
   );
 }
