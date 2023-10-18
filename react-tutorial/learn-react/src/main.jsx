@@ -9,6 +9,11 @@ import Conditionals from "./components/Conditionals.jsx";
 import Lists from "./components/Lists.jsx";
 import Forms from "./components/Forms.jsx";
 import "./index.css";
+// React Router is used in react for page routing
+// (Route attributes): "element" tells you what component to render, "index" specifies this route as the default route for the parent route, e.g. "/"
+// <Route> tags can be nested, e.g. parent Route has path="/" and child Route has path="contact", then the path="/contact" is used to use the <Contact> component
+// setting the path="*" will act as a catch-all for any undefined URLs, great for 404 error page
+// The <Link> and <Outlet> tags are used to link to the routes to the components using links (see App.jsx)
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // createRoot() takes one argument, an HTML element, the function is to define the HTML element where a React component should be displayed
@@ -19,15 +24,16 @@ const root = ReactDOM.createRoot(document.getElementById("root")); // id="root" 
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App></App>
       <Routes>
-        <Route path="/jsx" element={<JSX />}></Route>
-        <Route path="/components" element={<Components />}></Route>
-        <Route path="/props" element={<Props />}></Route>
-        <Route path="/events" element={<Events />}></Route>
-        <Route path="/conditionals" element={<Conditionals />}></Route>
-        <Route path="/lists" element={<Lists />}></Route>
-        <Route path="/forms" element={<Forms />}></Route>
+        <Route path="/" element={<App />}>
+          <Route path="jsx" element={<JSX />}></Route>
+          <Route path="components" element={<Components />}></Route>
+          <Route path="props" element={<Props />}></Route>
+          <Route path="events" element={<Events />}></Route>
+          <Route path="conditionals" element={<Conditionals />}></Route>
+          <Route path="lists" element={<Lists />}></Route>
+          <Route path="forms" element={<Forms />}></Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

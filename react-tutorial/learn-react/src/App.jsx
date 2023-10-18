@@ -1,7 +1,8 @@
 import "./App.css";
 
-import { Link } from "react-router-dom";
-
+import { Link, Outlet } from "react-router-dom";
+// Link is used to link to components along with Routes (see main.jsx), it sets the URL and keeps ttrack of browsing history
+// Outlet renders the current route selected
 function App() {
   return (
     <div>
@@ -30,6 +31,7 @@ function App() {
         </li>
       </ul>
       <hr />
+      <Outlet />
     </div>
   );
 }
