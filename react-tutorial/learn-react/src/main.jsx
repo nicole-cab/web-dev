@@ -7,6 +7,7 @@ import Props from "./components/Props.jsx";
 import Events from "./components/Events.jsx";
 import Conditionals from "./components/Conditionals.jsx";
 import Lists from "./components/Lists.jsx";
+import Forms from "./components/Forms.jsx";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -26,6 +27,7 @@ root.render(
         <Route path="/events" element={<Events />}></Route>
         <Route path="/conditionals" element={<Conditionals />}></Route>
         <Route path="/lists" element={<Lists />}></Route>
+        <Route path="/forms" element={<Forms />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

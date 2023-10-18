@@ -25,6 +25,9 @@ function App() {
         <li>
           <Link to="/lists">React Lists</Link>
         </li>
+        <li>
+          <Link to="/forms">React Forms</Link>
+        </li>
       </ul>
       <hr />
     </div>
