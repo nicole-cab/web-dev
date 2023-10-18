@@ -16,6 +16,9 @@ function App() {
         <li>
           <Link to="/props">React Props</Link>
         </li>
+        <li>
+          <Link to="/events">React Events</Link>
+        </li>
       </ul>
       <hr />
     </div>

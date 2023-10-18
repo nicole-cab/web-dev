@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import JSX from "./components/JSX.jsx";
 import Components from "./components/Components.jsx";
 import Props from "./components/Props.jsx";
+import Events from "./components/Events.jsx";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -20,6 +21,7 @@ root.render(
         <Route path="/jsx" element={<JSX />}></Route>
         <Route path="/components" element={<Components />}></Route>
         <Route path="/props" element={<Props />}></Route>
+        <Route path="/events" element={<Events />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
