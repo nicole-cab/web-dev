@@ -16,6 +16,7 @@ function Components() {
   // you can pass properties to components, which are like function arguments sent to the component as attributes
   return (
     <div>
+      <h1 className="heading">React Components</h1>
       <h1>This is how you use a component</h1>
       <Component color="red" />
     </div>

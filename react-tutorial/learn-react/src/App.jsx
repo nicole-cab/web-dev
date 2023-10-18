@@ -1,15 +1,23 @@
-import JSX from "./components/JSX";
-import Components from "./components/Components";
 import "./App.css";
+
+import { Link } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <h1 className="heading">React JSX</h1>
-      <JSX />
+      <h1 id="app-heading">REACT TUTORIAL</h1>
+      <ul>
+        <li>
+          <Link to="/jsx">React JSX</Link>
+        </li>
+        <li>
+          <Link to="/components">React Components</Link>
+        </li>
+        <li>
+          <Link to="/props">React Props</Link>
+        </li>
+      </ul>
       <hr />
-      <h1 className="heading">React Components</h1>
-      <Components />
     </div>
   );
 }

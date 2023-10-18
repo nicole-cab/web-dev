@@ -56,6 +56,7 @@ const myText2 = <h1>{x < 10 ? "Hello2" : "Goodbye2"}</h1>;
 function JSX() {
   return (
     <>
+      <h1 className="heading">React JSX</h1>
       <h1>Hello World!</h1>
       {exampleJSX}
       {exampleWithoutJSX}
