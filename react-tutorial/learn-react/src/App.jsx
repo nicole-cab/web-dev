@@ -32,6 +32,9 @@ function App() {
         <li>
           <Link to="/memo">React Memo</Link>
         </li>
+        <li>
+          <Link to="/css">React CSS Styling</Link>
+        </li>
       </ul>
       <hr />
       <Outlet />

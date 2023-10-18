@@ -10,6 +10,7 @@ import Lists from "./components/Lists.jsx";
 import Forms from "./components/Forms.jsx";
 import Page404 from "./components/Page404.jsx";
 import Memo from "./components/Memo.jsx";
+import CSS from "./components/CSS.jsx";
 import "./index.css";
 // React Router is used in react for page routing
 // (Route attributes): "element" tells you what component to render, "index" specifies this route as the default route for the parent route, e.g. "/"
@@ -36,6 +37,7 @@ root.render(
           <Route path="lists" element={<Lists />}></Route>
           <Route path="forms" element={<Forms />}></Route>
           <Route path="memo" element={<Memo />}></Route>
+          <Route path="css" element={<CSS />}></Route>
           <Route path="*" element={<Page404 />}></Route>
         </Route>
       </Routes>
