@@ -35,6 +35,9 @@ function App() {
         <li>
           <Link to="/css">React CSS Styling</Link>
         </li>
+        <li>
+          <Link to="/hooks">React Hooks</Link>
+        </li>
       </ul>
       <hr />
       <Outlet />

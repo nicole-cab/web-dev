@@ -1,7 +1,11 @@
 function Page404() {
+  const heading = {
+    color: "red",
+    textAlign: "center",
+  };
   return (
     <>
-      <h1 className="heading">404 Page Not Found</h1>
+      <h1 style={heading}>404 Page Not Found</h1>
     </>
   );
 }
