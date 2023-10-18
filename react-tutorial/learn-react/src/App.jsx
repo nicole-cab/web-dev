@@ -19,6 +19,9 @@ function App() {
         <li>
           <Link to="/events">React Events</Link>
         </li>
+        <li>
+          <Link to="/conditionals">React Conditionals</Link>
+        </li>
       </ul>
       <hr />
     </div>

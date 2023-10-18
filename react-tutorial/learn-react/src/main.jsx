@@ -5,6 +5,7 @@ import JSX from "./components/JSX.jsx";
 import Components from "./components/Components.jsx";
 import Props from "./components/Props.jsx";
 import Events from "./components/Events.jsx";
+import Conditionals from "./components/Conditionals.jsx";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -22,6 +23,7 @@ root.render(
         <Route path="/components" element={<Components />}></Route>
         <Route path="/props" element={<Props />}></Route>
         <Route path="/events" element={<Events />}></Route>
+        <Route path="/conditionals" element={<Conditionals />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
