@@ -4,10 +4,19 @@ import { Link, Outlet } from "react-router-dom";
 // Link is used to link to components along with Routes (see main.jsx), it sets the URL and keeps ttrack of browsing history
 // Outlet renders the current route selected
 function App() {
+  const hooks = [
+    "useState",
+    "useEffect",
+    "useContext",
+    "useRef",
+    "useReducer",
+    "useCallback",
+    "useMemo",
+  ];
   return (
     <div>
       <h1 id="app-heading">REACT TUTORIAL</h1>
-      <ul>
+      <ul className="nav">
         <li>
           <Link to="/jsx">React JSX</Link>
         </li>
@@ -35,8 +44,15 @@ function App() {
         <li>
           <Link to="/css">React CSS Styling</Link>
         </li>
-        <li>
+        <li className="item10">
           <Link to="/hooks">React Hooks</Link>
+          <ul>
+            {hooks.map((hook, index) => (
+              <li key={index}>
+                <Link to={"/" + hook}>{hook}</Link>
+              </li>
+            ))}
+          </ul>
         </li>
       </ul>
       <hr />
