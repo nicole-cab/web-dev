@@ -29,6 +29,9 @@ function App() {
         <li>
           <Link to="/forms">React Forms</Link>
         </li>
+        <li>
+          <Link to="/memo">React Memo</Link>
+        </li>
       </ul>
       <hr />
       <Outlet />
