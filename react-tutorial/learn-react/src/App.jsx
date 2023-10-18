@@ -22,6 +22,9 @@ function App() {
         <li>
           <Link to="/conditionals">React Conditionals</Link>
         </li>
+        <li>
+          <Link to="/lists">React Lists</Link>
+        </li>
       </ul>
       <hr />
     </div>
