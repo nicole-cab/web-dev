@@ -13,6 +13,7 @@ import Memo from "./components/Memo.jsx";
 import CSS from "./components/CSS.jsx";
 import Hooks from "./components/Hooks.jsx";
 import UseState from "./components/hooks/UseState.jsx";
+import UseEffect from "./components/hooks/UseEffect.jsx";
 import "./index.css";
 // React Router is used in react for page routing
 // (Route attributes): "element" tells you what component to render, "index" specifies this route as the default route for the parent route, e.g. "/"
@@ -42,6 +43,7 @@ root.render(
           <Route path="css" element={<CSS />}></Route>
           <Route path="hooks" element={<Hooks />}></Route>
           <Route path="useState" element={<UseState />}></Route>
+          <Route path="useEffect" element={<UseEffect />}></Route>
           <Route path="*" element={<Page404 />}></Route>
         </Route>
       </Routes>
