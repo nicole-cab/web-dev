@@ -15,6 +15,7 @@ import Hooks from "./components/Hooks.jsx";
 import UseState from "./components/hooks/UseState.jsx";
 import UseEffect from "./components/hooks/UseEffect.jsx";
 import UseContext from "./components/hooks/UseContext.jsx";
+import UseRef from "./components/hooks/UseRef.jsx";
 
 import "./index.css";
 // React Router is used in react for page routing
@@ -47,6 +48,7 @@ root.render(
           <Route path="useState" element={<UseState />}></Route>
           <Route path="useEffect" element={<UseEffect />}></Route>
           <Route path="useContext" element={<UseContext />}></Route>
+          <Route path="useRef" element={<UseRef />}></Route>
 
           <Route path="*" element={<Page404 />}></Route>
         </Route>
