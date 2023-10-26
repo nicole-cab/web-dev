@@ -17,6 +17,7 @@ import UseEffect from "./components/hooks/UseEffect.jsx";
 import UseContext from "./components/hooks/UseContext.jsx";
 import UseRef from "./components/hooks/UseRef.jsx";
 import UseReducer from "./components/hooks/UseReducer.jsx";
+import UseCallback from "./components/hooks/UseCallback.jsx";
 
 import "./index.css";
 // React Router is used in react for page routing
@@ -51,6 +52,7 @@ root.render(
           <Route path="useContext" element={<UseContext />}></Route>
           <Route path="useRef" element={<UseRef />}></Route>
           <Route path="useReducer" element={<UseReducer />}></Route>
+          <Route path="useCallback" element={<UseCallback />}></Route>
 
           <Route path="*" element={<Page404 />}></Route>
         </Route>
