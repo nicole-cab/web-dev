@@ -52,6 +52,9 @@ function App() {
                 <Link to={"/" + hook}>{hook}</Link>
               </li>
             ))}
+            <li>
+              <Link to="/customHooks">Custom Hooks</Link>
+            </li>
           </ul>
         </li>
       </ul>

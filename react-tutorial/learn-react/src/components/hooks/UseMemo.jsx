@@ -23,6 +23,7 @@ function UseMemo() {
   //   const calculation = expensiveCalculation(count);
 
   // with useMemo (the only difference between using useMemo and using it in the demo is this function)
+  // unless its dependencies change (count), then cache the value of calculation instead of running it again, because we know that without changing count the calculation will remain the same
   const calculation = useMemo(
     () => expensiveCalculation(count),
     [count]

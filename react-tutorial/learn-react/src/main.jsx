@@ -19,6 +19,7 @@ import UseRef from "./components/hooks/UseRef.jsx";
 import UseReducer from "./components/hooks/UseReducer.jsx";
 import UseCallback from "./components/hooks/UseCallback.jsx";
 import UseMemo from "./components/hooks/UseMemo.jsx";
+import CustomHooks from "./components/hooks/CustomHooks.jsx";
 
 import "./index.css";
 // React Router is used in react for page routing
@@ -82,6 +83,10 @@ root.render(
           element={<UseCallback />}
         ></Route>
         <Route path="useMemo" element={<UseMemo />}></Route>
+        <Route
+          path="customHooks"
+          element={<CustomHooks />}
+        ></Route>
 
         <Route path="*" element={<Page404 />}></Route>
       </Route>
