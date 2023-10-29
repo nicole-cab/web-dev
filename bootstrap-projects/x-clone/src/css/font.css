@@ -1,20 +1,20 @@
 @import url("https://fonts.cdnfonts.com/css/helvetica-neue-5");
 
 @font-face {
-  font-family: usernameFont;
-  src: url(../fonts/username.otf);
+  font-family: handleFont;
+  src: url(../fonts/handle.otf);
 }
 @font-face {
   font-family: postFont;
-  src: url(../fonts/username.otf);
+  src: url(../fonts/handle.otf);
 }
 @font-face {
   font-family: displayNameFont;
   src: url(../fonts/display-name.otf);
 }
 
-.username {
-  font-family: usernameFont !important;
+.handle {
+  font-family: handleFont !important;
   color: rgb(113, 118, 123) !important;
 }
 .post {

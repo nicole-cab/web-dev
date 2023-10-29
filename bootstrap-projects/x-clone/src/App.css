@@ -3,3 +3,26 @@
 * {
   color: white !important;
 }
+
+.app {
+  border: solid greenyellow;
+}
+
+.x-navbar, .content, .misc, .home {
+  border: solid red;
+}
+
+.row {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+div[class*="col-"] {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.nav {
+  margin: 0 !important;
+  padding: 0 !important;
+}
