@@ -1,10 +1,7 @@
 function Navbar() {
   return (
     <>
-      <ul
-        className="nav flex-column justify-content-between h-100"
-        style={{ border: "solid" }}
-      >
+      <ul className="nav flex-column justify-content-between h-100">
         <div className="d-flex flex-column align-items-end">
           <li className="nav-item">
             <a className="nav-link" href="#">
