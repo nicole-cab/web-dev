@@ -1,0 +1,389 @@
+                    RESPONSIVE WEB DESIGN TUTORIAL
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Step 1: Set the Viewport in the HTML files for each page.
+Step 2: Use Grid-View.
+Step 3: Use Media Queries to change layout depending on device screen sizes.
+        > set col classes, mobile first design, breakpoints (5), orientation, hiding elements, font size
+Step 4: Make Images Responsive.
+        >  scale up and/or down images on different screen sizes
+Step 5: Make Videos Responsive.
+        >  scale up and/or down video players on different screen sizes
+
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+** SETTING THE VIEWPORT **
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+// "width=device-width" sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+
+// "initial-scale=1.0" sets the initial zoom level when the page is first loaded by the browser.
+
+// rules to follow:
+    - do not use large fixed width elements (e.g. img bigger than viewport is bad)
+    - do not let the content rely on a particular viewport width to render well (e.g. screen dimensions and width vary)
+    - use CSS media queries to apply different styling for small and large screens (e.g. consider using relative width values like %, large abosulte positioning values may cause the element to fall outside the viewport on small devices)
+
+--------------------------------------------------
+
+** GRID-VIEW **
+
+// grid-view: the page is divided into columns
+    // a responsive grid-view often has 12 columns, and has a total width of 100%, and will shrink and expand as you resize the browser window
+
+** BUILDING A RESPONSIVE GRID-VIEW **
+
+// first ensure that all HTML elements have the box-sizing property set to border: box, to make sure that the padding and border are included in the total width and height of the elements like this:
+
+* {
+    box-sizing: border-box
+}
+
+// we want a responsive grid-view with 12 columns, do this:
+
+// first create a class for each width
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+// then make all the classes float to the left, and have padding of 15px
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
+}
+
+// then each row should be wrapped in a div, the number of columns inside a row should always add up to 12
+
+<div class="row">
+  <div class="col-3">...</div> <!-- 25% -->
+  <div class="col-9">...</div> <!-- 75% -->
+</div>
+
+// the cols inside use "float: left" which means they are taken out of the flow of the page, and other elements will be placed as if the columns do not exist. To prevent this, we will add a style that clears the flow:
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+// content: used with "::before" and "::after" pseudo elements to insert generated content.
+// clear: // controls the flow next to floated elements, "both" means the element is pushed below both left and right floated elements
+// display: specifies the display behaviour (the type of rendering box) of an element, "table" lets the element behave like a <table> element
+
+// THIS WRITING THE CSS YOURSELF, USE BOOTSTRAP!
+
+--------------------------------------------------
+
+** MEDIA QUERIES **
+
+// media query: a CSS technique introduced in CSS3
+// it uses the @media rule to include a block of CSS properties only if a certain condition is true
+
+e.g.
+
+// if the browser window is 600px or smaller, the background color will be light blue:
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+// ADD A BREAKPOINT
+
+// we can add a breakpoin where certain parts of the design will behave differently on each side of the BREAKPOINT
+
+e.g. use a media query to add a breakpoint at 768px.
+
+// when the screen gets smaller than 768px, each column should have a width of 100%:
+
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
+// ALWAYS DESIGN FOR MOBILE FIRST
+
+// tip: instead of changing styles when the width gets smaller, we should change the design when the width gets larger
+// design for mobiles first then for larger devices like desktops
+
+e.g. first for mobiles then for larger screens
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+// you can add as many breakpoints as you like
+e.g. one for desktop, one for tablets and one for phones
+
+e.g. add one more media query at (600px), and a set of new classes for devices larger than 600px (but smaller than 768px):
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+// it may seem odd to have two sets of idential classes, but it gives us the opportunity in HTML, to decide what happens with the columns at each breakpoint:
+
+// desktop: first and last section spans 3 cols, mid section spans 6
+// tablets: first section spans 3 cols, mid spans 9 and last section spans 12
+<div class="row">
+  <div class="col-3 col-s-3">...</div>
+  <div class="col-6 col-s-9">...</div>
+  <div class="col-3 col-s-12">...</div>
+</div>
+
+// TYPICAL DEVICE BREAKPOINTS
+
+// there are tons screen sizes, so it is hard to create an exact breakpoint for each device, to keep it simple you could target give groups:
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...}
+
+// ORIENTATION: PORTRAIT/LANDSCAPE
+
+// media queries can also be used to change layout of a page depending on the orientation of the browser:
+
+@media only screen and (orientation: landscape) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+// HIDE ELEMENTS WITH MEDIA QUERIES
+
+// you also use media queries to hide elements on different screen sizes:
+
+/* If the screen size is 600px wide or less, hide the element */
+@media only screen and (max-width: 600px) {
+  div.example {
+    display: none;
+  }
+}
+
+// CHANGE FONT SIZE WITH MEDIA QUERIES
+
+// you can also change font size of an element with media queries on different screen sizes:
+
+/* If the screen size is 601px or more, set the font-size of <div> to 80px */
+@media only screen and (min-width: 601px) {
+  div.example {
+    font-size: 80px;
+  }
+}
+
+/* If the screen size is 600px or less, set the font-size of <div> to 30px */
+@media only screen and (max-width: 600px) {
+  div.example {
+    font-size: 30px;
+  }
+}
+
+--------------------------------------------------
+
+** IMAGES **
+
+// you can scale the img size using the width and height property:
+
+// the image will scale up and down
+img {
+  width: 100%;
+  height: auto;
+}
+
+// in the case above the image can scale up to be larger than its original size, you can use "max-width" to stop this:
+
+// max-width to 100% means that the img will scale down if it has to, but never scale up to be larger than its original size
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// BACKGROUND IMAGES
+
+// bg images can also respond to resizing and scaling, there are 3 methods
+
+// method 1. using "background-size: contain", the bg image will scale and try to fit the content area keeping its aspect ratio (width height relationship):
+
+div {
+  width: 100%;
+  height: 400px;
+  background-image: url('img_flowers.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+// method 2. using "background-size: 100% 100%", the bg img will stretch to cover the entire content area
+
+div {
+  width: 100%;
+  height: 400px;
+  background-image: url('img_flowers.jpg');
+  background-size: 100% 100%;
+}
+
+// method 3: using "background-size: cover", the bg img will scale to cover the entire area, while keeping the aspect ratio and some part of the bg img may be clipped:
+
+div {
+  width: 100%;
+  height: 400px;
+  background-image: url('img_flowers.jpg');
+  background-size: cover;
+}
+
+// DIFFERENT IMAGES FOR DIFFERENT devices
+
+// a large img can be good on big screens but bad on small screens
+// to reduce the load, you can use media queries to display different images on different devices:
+
+/* For width smaller than 400px: */
+body {
+  background-image: url('img_smallflower.jpg');
+}
+
+/* For width 400px and larger: */
+@media only screen and (min-width: 400px) {
+  body {
+    background-image: url('img_flowers.jpg');
+  }
+}
+
+// you can use "min-device-width" instead of "min-width" to check the device width instead of the browser width, so that the img will not change when you resize the browser window:
+
+/* For devices smaller than 400px: */
+body {
+  background-image: url('img_smallflower.jpg');
+}
+
+/* For devices 400px and larger: */
+@media only screen and (min-device-width: 400px) {
+  body {
+    background-image: url('img_flowers.jpg');
+  }
+}
+
+// THE HTML <picture> ELEMENT
+
+// <picture> works similar to <video> and <audio>
+// you set up different sources, and the first source that fits the preferences is the one being used:
+
+<picture>
+  <source srcset="img_smallflower.jpg" media="(max-width: 400px)">
+  <source srcset="img_flowers.jpg">
+  <img src="img_flowers.jpg" alt="Flowers">
+</picture>
+
+// "srcser" is required, it defines the source of the img
+// "media" is optional, it accepts the media queries you find in the CSS @media rule
+// "<img>": you should also define an <img> element for browsers that do not support the <picture> element
+
+--------------------------------------------------
+
+** VIDEOS **
+
+// you can resize the video player to scale up and down:
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+// you can make it so that it stops at its original size and doesn't scale up:
+
+video {
+  max-width: 100%;
+  height: auto;
+}
