@@ -38,4 +38,4 @@ readFile("./content/first.txt", "utf8", (err, result) => {
 // when using fs async the read/write operations are executed asynchronously meaning that if they take a long time then node will start executing the next code and the read/write operation may finish later on
 
 // notice that to perform read-read-write you get complex nested functions
-// alternatively you can use promises or async/await (in more detail later in the course, recommended to use async/await)
+// alternatively you can use promises or async/await (in more detail later in the course, recommended to use async/await because it is easier to work with)
