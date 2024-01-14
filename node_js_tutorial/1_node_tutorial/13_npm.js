@@ -45,7 +45,7 @@ console.log(newItems);
 
 // uninstall package:
 // > npm uninstall <packageName>
-// or remove the dependency from the package.json delete node_modules and re-onstall the depedencies with > npm install
+// or remove the dependency from the package.json delete node_modules and re-install the depedencies with > npm install
 
 // NPX : package runner
 // run package without installing it e.g. create-react-app
