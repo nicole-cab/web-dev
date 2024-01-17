@@ -1,43 +1,25 @@
-// EXPRESS QUERY STRING PARAMS or URL PARAMS
-// used by users to send data using the url
-// e.g. to query db or filter results
+// EXPRESS MVC PATTERN
+
+// in this section we reuse the code "8_http_methods.js", we will focus more on the MVC pattern
+
+// MCV: model-view-controller, a software architecture pattern that separates an application into three interconnected components: the Model, the View, and the Controller
 
 const express = require("express");
 const app = express();
-const { products } = require("./data");
 
-app.get("/", (req, res) => {
-  res.send("Home Page");
-});
+const people = require("./routes/people");
+const auth = require("./routes/auth");
 
-app.get("/api/v1/query", (req, res) => {
-  // if client's url looks like this: .../api/v1/query?name=nicole&id=3
-  // then req.query = {name: "john", id: "3"}
-  console.log(req.query); // access query params
+// ---------- set up middleware to parse data
 
-  // looking for specific keys
-  const { search, limit } = req.query;
-  let sortedProducts = [...products];
+// *** REUSED CODE
+app.use(express.static("./methods-public"));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
-  // if search exist filter by name
-  if (search) {
-    sortedProducts = sortedProducts.filter((product) => {
-      return product.name.startsWith(search);
-    });
-  }
-
-  // if limit exist slice from start to limit number
-  if (limit) {
-    sortedProducts = sortedProducts.slice(0, Number(limit));
-    console.log(sortedProducts);
-  }
-
-  res.status(200).json(sortedProducts);
-});
-
-app.all("*", (req, res) => {
-  res.status(404).send("404 resource not found");
-});
+// apply middleware
+app.use("/api/people", people);
+app.use("/api/login", auth);
 
 app.listen(5000, () => {
   console.log("Server is listening on port number 5000...");
