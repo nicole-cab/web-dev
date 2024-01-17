@@ -2,13 +2,8 @@ const express = require("express");
 
 const router = express.Router();
 
-router.post("/", (req, res) => {
-  console.log(req.body);
-  const { name } = req.body;
-  if (name) {
-    return res.status(200).send(`Welcome ${name}`);
-  }
-  res.status(404).send("Please provide credentials");
-});
+const login = require("../controllers/auth");
+
+router.post("/", login);
 
 module.exports = router;
