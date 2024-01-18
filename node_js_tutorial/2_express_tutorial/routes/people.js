@@ -15,7 +15,7 @@ const {
 // router.get("/", getPeople);
 // router.post("/", createPerson);
 // router.post("/postman", createPersonPostman);
-// router.put("/", updatePerson);
+// router.put("/:id", updatePerson);
 // router.delete("/:id", deletePerson);
 
 // this is another way to route requests (the set up you is just preference)
